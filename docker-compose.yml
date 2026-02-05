@@ -3,7 +3,7 @@ version: '3.8'
 services:
   vllm-mai-ui:
     image: vllm/vllm-openai:latest
-    container_name: mai-ui-8b-agent
+    container_name: mai-ui-2b-agent
     ports:
       - "8001:8000" # 映射到宿主机8001端口
     environment:
@@ -12,7 +12,7 @@ services:
     volumes:
       - ${USERPROFILE}/.cache/huggingface:/root/.cache/huggingface
     command: >
-      --model Tongyi-MAI/MAI-UI-8B --served-model-name MAI-UI-8B --host 0.0.0.0 --port 8000 --trust-remote-code --dtype float16 --gpu-memory-utilization 0.85 --max-model-len 1024 --enforce-eager
+      --model Tongyi-MAI/MAI-UI-2B --served-model-name MAI-UI-2B --host 0.0.0.0 --port 8000 --trust-remote-code --dtype float16 --gpu-memory-utilization 0.85 --max-model-len 4096 --enforce-eager
     deploy:
       resources:
         reservations:
