@@ -1,8 +1,6 @@
-version: "3.8"
-
 services:
   vllm-mai-ui:
-    image: vllm/vllm-openai:latest
+    image: vllm/vllm-openai:v0.7.2
     container_name: mai-ui-2b-agent
     ports:
       - "8001:8000" # 映射到宿主机8001端口
